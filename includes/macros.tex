@@ -1,0 +1,207 @@
+%!TEX root = ../dissertation.tex
+%  Notes command (uncomment the first for publication, uncomment the second
+%  when working on the paper)
+
+%\definecolor{darkgreen}{rgb}{0,0.4,0}
+
+
+%\newcommand{\CHRONO}{{\sffamily{{Chrono}}}\xspace}
+\newcommand{\CHRONO}{{\sffamily{{Chrono}}}}
+\newcommand{\softpackage}[1]{{\sffamily{#1}}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\def\mathbbm#1{\mathbb{#1}}% ***ALEX***
+%\def\vect#1{{\mathbf #1}}
+\def\amatr#1{{\mathbf #1}}
+
+%\newcommand{\cA}{{\mathcal A}}
+%\newcommand{\cB}{{\mathcal B}}
+%\newcommand{\cC}{{\mathcal C}}
+%\newcommand{\cD}{{\mathcal D}}
+%\newcommand{\cL}{{\mathcal L}}
+%\newcommand{\cone}{{\Upsilon}}
+
+%\newcommand{\BigPT}{{{\mathbf D}^T}}
+%\newcommand{\BigP}{{{\mathbf D}}}
+%\newcommand{\Proj}[2]{\,{{\mathbf D}}^{#2}_{#1}}
+%\newcommand{\Pn}[2]{\,{{\mathbf D}}^{#2}_{#1,{n}}}
+%\newcommand{\Ptu}[2]{\,{{\mathbf D}}^{#2}_{#1,{u}}}
+%\newcommand{\Ptw}[2]{\,{{\mathbf D}}^{#2}_{#1,{w}}}
+%\newcommand{\PnT}[2]{\,{{\mathbf D}^{#2}_{#1,{n}}}^{T}}
+%\newcommand{\PtuT}[2]{\,{{\mathbf D}^{#2}_{#1,{u}}}^{T}}
+%\newcommand{\PtwT}[2]{\,{{\mathbf D}^{#2}_{#1,{w}}}^{T}}
+%
+%\newcommand{\CP}[1]{{{\Pi}_{{\cone}_{#1}}}}
+%
+%\newcommand{\nVec}[1]{{\mathbf n}_{#1}}
+%\newcommand{\uVec}[1]{{\mathbf u}_{#1}}
+%\newcommand{\wVec}[1]{{\mathbf w}_{#1}}
+%
+%\newcommand{\hatGN}[2]{{\widehat{\gamma}_{#1,n}^{#2}}}
+%\newcommand{\hatGU}[2]{{\widehat{\gamma}_{#1,u}^{#2}}}
+%\newcommand{\hatGW}[2]{{\widehat{\gamma}_{#1,w}^{#2}}}
+%\newcommand{\hatGB}[1]{{\widehat{\gamma}_{#1,b}}}
+%
+%\newcommand{\BigG}{{\mathbf \gamma}}
+%\newcommand{\Gt}[1]{{{\mathbf \gamma}^{T}_{#1}}}
+%\newcommand{\GN}[2]{{{\gamma}_{#1,n}^{#2}}}
+%\newcommand{\GU}[2]{{{\gamma}_{#1,u}^{#2}}}
+%\newcommand{\GW}[2]{{{\gamma}_{#1,w}^{#2}}}
+%\newcommand{\GB}[1]{{{\gamma}_{#1,b}}}
+%\newcommand{\GUsq}[1]{{{\gamma}}^2_{#1,u}}
+%\newcommand{\GWsq}[1]{{{\gamma}}^2_{#1,w}}
+%\newcommand{\itG}[2]{{{\gamma}^{(#2)}_{#1}}}
+
+
+
+\newcommand{\cA}{{\cal A}}
+\newcommand{\cL}{{\cal L}}
+\newcommand{\cone}{{\Upsilon}}
+\newcommand{\cD}{{\cal D}}
+
+\newcommand{\BigPT}{{{\bf D}^T}}
+\newcommand{\BigP}{{{\bf D}}}
+\newcommand{\ProjT}[1]{\,{{\bf D}}^T_{#1}}
+\newcommand{\Proj}[1]{\,{{\bf D}}_{#1}}
+\newcommand{\Pn}[1]{\,{{\bf D}}_{#1,{n}}}
+\newcommand{\Ptu}[1]{\,{{\bf D}}_{#1,{u}}}
+\newcommand{\Ptw}[1]{\,{{\bf D}}_{#1,{w}}}
+\newcommand{\PnT}[1]{\,{{\bf D}}^T_{#1,{n}}}
+\newcommand{\PtuT}[1]{\,{{\bf D}}^T_{#1,{u}}}
+\newcommand{\PtwT}[1]{\,{{\bf D}}^T_{#1,{w}}}
+
+
+
+\newcommand{\CP}[1]{{{\Pi}_{{\cone}_{#1}}}}
+
+\newcommand{\nVec}[1]{{\bf n}_{#1}}
+\newcommand{\uVec}[1]{{\bf u}_{#1}}
+\newcommand{\wVec}[1]{{\bf w}_{#1}}
+
+\newcommand{\hatGN}[1]{{\widehat{\gamma}_{#1,n}}}
+\newcommand{\hatGU}[1]{{\widehat{\gamma}_{#1,u}}}
+\newcommand{\hatGW}[1]{{\widehat{\gamma}_{#1,w}}}
+\newcommand{\hatGB}[1]{{\widehat{\gamma}_{#1,b}}}
+
+\newcommand{\BigG}{{\bf \gamma}}
+\newcommand{\Gt}[1]{{{\bf \gamma}^{T}_{#1}}}
+\newcommand{\GN}[1]{{{\gamma}_{#1,n}}}
+\newcommand{\GU}[1]{{{\gamma}_{#1,u}}}
+\newcommand{\GW}[1]{{{\gamma}_{#1,w}}}
+\newcommand{\GB}[1]{{{\gamma}_{#1,b}}}
+\newcommand{\GUsq}[1]{{{\gamma}}^2_{#1,u}}
+\newcommand{\GWsq}[1]{{{\gamma}}^2_{#1,w}}
+\newcommand{\itG}[2]{{{\gamma}^{(#2)}_{#1}}}
+
+
+
+\newcommand{\norm}[1]{{ \left| { \left| #1 \right| }  \right| }}
+\newcommand{\subVect}[2]{{#1}_{{#2}}}
+
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\newcommand{\matr}[1]{\boldsymbol{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\HC}[1]{ \mathclap{\text{#1} } }
+\newcommand{\overb}[2]{\overbrace{#1}^{\HC{#2}}}
+\newcommand{\underb}[2]{\underbrace{#1}_{\HC{#2}}}
+
+\newcommand{\x}{\times}
+%\newcommand{\R}{\mathbb{R}}
+\newcommand{\R}{\Re}
+\newcommand{\row}{\Re^{1 \times 3}}
+\newcommand{\col}{\Re^{3}}
+\newcommand{\mat}{\Re^{3 \times 3}}
+
+%\newcommand{\br}{{\mathbf r}}
+%\newcommand{\bv}{{\mathbf v}}
+\newcommand{\bp}{{\mathbf p}}
+%\newcommand{\bx}{{\mathbf x}}
+\newcommand{\by}{{\mathbf y}}
+\newcommand{\bz}{{\mathbf z}}
+
+\newcommand{\bJW}{{\mathbf J}_W}
+\newcommand{\X}{{\boldsymbol \xi}_a}
+\newcommand{\Z}{{\boldsymbol \zeta}_a}
+\newcommand{\C}{{\chi}_a}
+
+\newcommand{\qr}{q_{\mathbf r}}
+\newcommand{\qrr}{q_{\mathbf rr}}
+
+\newcommand{\nablaT}{\nabla^T}
+\newcommand{\nablaa}{\nabla_a}
+\newcommand{\nablab}{\nabla_b}
+\newcommand{\nablaaT}{\nabla_a^T}
+\newcommand{\nablabT}{\nabla_b^T}
+
+\newcommand{\p}{\partial}
+\newcommand{\pr}{\partial_{\mathbf r}}
+\newcommand{\pra}{\partial_{{\mathbf r}_a}}
+\newcommand{\prb}{\partial_{{\mathbf r}_b}}
+\newcommand{\pva}{\partial_{{\mathbf v}_a}}
+\newcommand{\pvb}{\partial_{{\mathbf v}_b}}
+\newcommand{\ppa}{\partial_{p_a}}
+\newcommand{\ppb}{\partial_{p_b}}
+%-------------------------------------------------------
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bQ}{\mathbf{Q}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bJ}{\mathbf{J}}
+\newcommand{\bG}{\mathbf{G}}
+\newcommand{\bT}{\mathbf{T}}
+\newcommand{\bV}{\mathbf{V}}
+\newcommand{\bX}{\mathbf{X}}
+
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\xv}{\hat{\bv}}
+\newcommand{\mathbff}{\mathbf{f}}
+%\newcommand{\bs}{\mathbf{s}}
+%\newcommand{\bt}{\mathbf{t}}
+\newcommand{\brho}{\boldsymbol\rho}
+\newcommand{\bomega}{\boldsymbol\omega}
+%\newcommand{\xva}{\left\langle {{\bv_a}} \right\rangle}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bq}{\mathbf{q}}
+
+\newcommand{\VO}{\mathbb{V}}
+\newcommand{\AR}{\mathbb{A}}
+%\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dd}{d}
+\newcommand{\nParticles}{P}
+\newcommand{\support}[1]{{{\mathcal{S}({#1})}}}
+
+\newcommand{\AppliedF}{ { {\vect{f} }\left( {t, {\vect x} , {\vect v} } \right)} }
+\newcommand{\AppliedFn}{ {\vect f}({t, {\vect x} , {\vect v}} )^n }
+\newcommand{\ReactF}{ { { {{\matr{D}}^j}^T{\widehat{\gamma}^j } } } }
+\newcommand{\FricConF}{\left( \hatGN{i}{c}\Pn{i}{c} + \hatGU{i}{c} \Ptu{i}{c} + \hatGW{i}{c} \Ptw{i}{c} \right)}
+\newcommand{\DissipEnergy}{ {\vect v}^T \left(\hatGU{i}{c} \Ptu{i}{c} + \hatGW{i}{c} \Ptw{i}{c} \right)}
+\newcommand{\Relaxation}[1]{\mu^f_i \sqrt{\left(\PtuT{i}{#1} {\vect{v}}^{n+1}\right)^2+\left(\PtwT{i}{#1} {\vect{v}}^{n+1}\right)^2} }
+
+
+\newcommand{\feedback}[1]{\bf{\textcolor{red}{#1}}}
+
+%\newcommand{\LineIf}[3]{\State \algorithmicif\ {#1}\ \algorithmicthen\ {#2}\ \algorithmicelse\ {#3}\ \algorithmicend \algorithmicif }
+
+
+
+\newcommand{\bg}{\mathbf{g}}
+%\newcommand{\xva}{\left\langle {{\bv_a}} \right\rangle}
+\newcommand{\nFluid}{{N_F}}                      % number of SPH fluid particles 
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\SBELfeedback}[2]{{\bf{\textcolor{red}{#1}}} {\textcolor{blue}{(#2)}}}
+\newcommand{\RN}[1]{%
+	\textup{\expandafter{\romannumeral#1}}%
+}
+
+
+\newcommand{\bA}{\mathbf{A}}
+
+
+\newcommand{\bff}{\mathbf{f}}
+
+\newcommand{\bt}{\mathbf{t}}
+
+%\newcommand{\xva}{\left\langle {{\bv_a}} \right\rangle}

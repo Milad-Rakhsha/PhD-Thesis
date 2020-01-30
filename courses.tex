@@ -1,0 +1,42 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{tabularx}
+\begin{document}
+
+\begin{table}[ht!]
+\centering
+%\caption{My caption}
+%\label{my-label}
+\begin{tabularx}{\textwidth}{llXl}
+\toprule
+Department & Number & Title                          & Credits \\ \midrule
+\multicolumn{4}{l}{Major}                                      \\ \midrule
+EMA        & 605    & Intro to Finite Elements       & 3       \\
+ME         & 444    & Design Problems-Elasticity     & 3       \\
+ME         & 964    & High Prf. Compting for ME Apps & 3       \\
+ME         & 573    & Computational Fluid Dynamcs    & 3       \\
+ME         & 706    & Plates,Shells\&Pressr Vessel   & 3       \\
+ME         & 448    & Mechanical Systems Analysis    & 3       \\
+ME         & 564    & Heat Transfer                  & 3       \\
+ME         & 903    & Graduate Seminar               & 2       \\
+ME         & 790    & Master's Research \& Thesis    & 9       \\
+ME         & 748    & Design-Mech Elements \& Sys    & 3       \\
+ME         & 740    & Advanced Vibrations            & 3       \\
+ME         & 964    & Adv Comp Tech - FEA \& Opt     & 3       \\
+ME         & 890    & PhD Research and Thesis        & 43      \\
+ME         & 990    & Dissertator Research\&Thesis   & 9       \\ \midrule
+\multicolumn{4}{l}{Minor}                                      \\ \midrule
+COMP SCI   & 525    & Linear Programming Methods     & 3       \\
+COMP SCI   & 838    & Into. Phys. Based Mdlng/Sim    & 3       \\
+COMP SCI   & 559    & Computer Graphics              & 3       \\
+COMP SCI   & 635    & Tools \& Envirnmt-Optimizatn   & 3       \\
+COMP SCI   & 838    & Advanced Graphics              & 3       \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+
+\end{document}

@@ -1,0 +1,35 @@
+\tikzsetnextfilename{Elastic_Gate_Schematic}
+%\tikzset{external/export next=false}
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+			\fill[blue!40!white] (-3,0) rectangle (0,3);
+			\fill[blue!10!black] (-0.1,0) rectangle (0.1,2);
+			\draw[<-,line width=0.4mm] (0.1,1) -- (0.7,1);
+			\draw (1.5,1) node []{\small Elastic gate };
+			
+				%Ground
+				\draw  (-3,0) -- (2.7,0) [line width=0.6mm];
+				\draw  (-3,0) -- (-3,4) [line width=0.5mm];
+				\draw  (0,0) -- (0,4) [line width=0.5mm];
+		
+		\draw (1.3,3) node []{\small g=9.8 \si{m/s^2}};
+		\draw[<-,line width=0.4mm] (0.3,2.7) -- (0.3,3.1);
+				
+		\draw[<->,line width=0.2mm] (-0.5,0.05) -- (-0.5,1.95) ;
+		\draw (-0.7,1) node [rotate=90] {\small L= 0.079 \si{m}};
+		
+		\draw[<->,line width=0.2mm] (-2.5,0.05) -- (-2.5,2.95) ;
+		\draw (-2.3,1.3) node [rotate=90] {\small H= 0.14 \si{m}};
+		
+%		\draw[<->,line width=0.2mm] (-2.95,3.2) -- (-0.05,3.2) ;
+%		\draw (-1.5,3.4) node [] {\small B= 0.1 \si{m}};
+%
+%		\draw (-2.1,6) node [] {\small Water properties: };
+%		\draw (-0.9,5.6) node [] {\small $\rho$=1000 \si{kg/m^3} , $\mu $=0.0001 \si{Pa.s} };
+%		\draw (-1.7,5) node [] {\small Elastic gate properties:};
+%		\draw (-0.2,4.6) node [] {\small $\rho_s$=1100 \si{kg/m^3}, $\nu$ =0.4, thickness=0.005 \si{m} };
+	\end{tikzpicture}
+		\caption{Schematic and specifications of the elastic gate experiment}
+			\label{fig:Elastic_Gate_Schematic}
+\end{figure}

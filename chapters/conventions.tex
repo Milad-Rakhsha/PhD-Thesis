@@ -1,0 +1,130 @@
+%!TEX root = ../dissertation.tex
+\svnidlong
+{$HeadURL: https://subversion.cae.wisc.edu/svn/sbel/Theses/Hammad_PhD/chapters/conventions.tex $}
+{$LastChangedDate: 2016-04-28 01:55:34 -0500 (Thu, 28 Apr 2016) $}
+{$LastChangedRevision: 9314 $}
+{$LastChangedBy: hammad $}
+\svnid{$Id: conventions.tex 9314 2016-04-28 06:55:34Z hammad $}
+\chapter{Nomenclature}
+\label{chap:nomenclature}
+
+\section*{Simulation Parameters}
+\begin{multicols}{2}
+\begin{compactdesc}
+    \item[$\mu^f$] Friction Constant
+    \item[$c$] Cohesion
+    \item[$E$] Young's Modulus
+    \item[$\nu$] Poisson's Ratio
+    \item[$\lambda$] Lam\'{e}'s first parameter
+    \item[$\mu$] Lam\'{e}'s second parameter
+    \item[$\theta_c$] Critical Stretch
+    \item[$\theta_c$] Critical Compression
+    \item[$\rho_0$] Rest Density
+    \item[$K^c$] Rigid body contact stiffness
+    \item[$K^{fb}$] Fluid-Rigid contact stiffness
+    \item[$K^{tb}$] Tetrahedron-Rigid contact stiffness
+    \item[$\alpha^c$] Rigid body Contact Damping Coefficient
+    \item[$\alpha^{fb}$] Fluid-Rigid Contact Damping Coefficient
+    \item[$\alpha^{tb}$] Tetrahedron-Rigid Contact Damping Coefficient
+    \item[$\beta^{t}$] Tetrahedron Strain Damping Coefficient
+    \item[$\epsilon$] Density constraint stiffness
+    \item[$\tau$] Fluid Constraint Resolution Time
+    \item[$\Delta t$] Time Step
+    \item[$h$] Kernel Support Distance
+\end{compactdesc}
+\end{multicols}
+
+\section*{Dimensionality}
+\begin{multicols}{2}
+\begin{compactdesc}
+    \item[$n_*$] Number of *
+    \item[$n_b$] Rigid Bodies
+    \item[$n_p$] Fluid Markers
+    \item[$n_{tn}$] Tetrahedron Nodes
+    \item[$n_c$] Rigid Body Contacts
+    \item[$n_j$] Joints
+    \item[$n_{f}$] Density Constraints
+    \item[$n_{fb}$] Fluid-Boundary Contacts
+    \item[$n_{t}$] Tetrahedron Constraints
+    \item[$n_{tb}$] Tetrahedron-Boundary Contacts
+    \item[$n_{n}$] MPM Grid Nodes
+    \item[$n_{dof}$] Degrees of Freedom
+    \item[$n_{con}$] Constraints
+\end{compactdesc}
+\end{multicols}
+
+The number of total degrees of freedom and number of constraints are computed as follows:
+\begin{align}
+n_{dof}&=6n_b + 3n_p + 3n_{tn}\\
+n_{con}&=3n_c + n_j + n_f + 3n_{fb} + 7n_{t} + 3n_{tb}.
+\end{align}
+
+
+\section*{Object and Constraint Symbols}
+The following symbols when used as superscripts define a specific type of object or constraint.
+%\begin{multicols}{2}
+\begin{compactdesc}
+    \item[$b$] Rigid Body
+    \item[$p$] Fluid Marker
+    \item[$tn$] Tetrahedron Node
+    \item[$c$] Contact Constraint
+    \item[$j$] Bilateral/Joint  Constraint
+    \item[$f$] Density Constraint
+    \item[$fb$] Fluid Boundary Constraint
+    \item[$t$] Tetrahedron Constraint
+    \item[$tv$] Tetrahedron Volume Constraint
+    \item[$tb$] Tetrahedron Boundary Constraint
+    \item[$n$] MPM Grid Node
+\end{compactdesc}
+%\end{multicols}
+
+\section*{Objects, Jacobians, Multipliers, Constraints}
+%\begin{multicols}{2}
+\begin{compactdesc}
+    \item[$\matr{M} \in \mathbb{R}^{n_{dof} \times n_{dof}}$] Full Mass Matrix
+    \item[$\matr{M}^{b} \in \mathbb{R}^{6n_{b} \times 6n_{b}}$] Rigid Body Mass Matrix
+    \item[$\matr{M}^{p} \in \mathbb{R}^{3n_{p} \times 3n_{p}}$] Fluid Marker Mass Matrix
+    \item[$\matr{M}^{tn} \in \mathbb{R}^{3n_{tn} \times 3n_{tn}}$] Tetrahedron Node Mass Matrix
+    \item[$\matr{D}^{c} \in \mathbb{R}^{6n_{b} \times (3n_{c})}$] Contact Jacobian Matrix
+    \item[$\matr{D}^{j} \in \mathbb{R}^{6n_{b} \times n_{j}}$] Joint Jacobian Matrix
+    \item[$\matr{D}^{f} \in \mathbb{R}^{3n_{p} \times 3n_{f}}$] Fluid Jacobian Matrix
+    \item[$\matr{D}^{t} \in \mathbb{R}^{3n_{tn} \times 6n_{t}}$] Tetrahedron Strain Jacobian Matrix
+    \item[$\matr{D}^{tv} \in \mathbb{R}^{3n_{tn} \times n_{t}}$] Tetrahedron Volume Jacobian Matrix
+    \item[$\matr{D}^{fb} \in \mathbb{R}^{6n_{b} + 3n_{p}\times 3n_{fb}}$] Fluid Boundary Jacobian Matrix
+    \item[$\matr{D}^{tb} \in \mathbb{R}^{6n_{b} + 3n_{tn} \times 3n_{tb}}$] Tetrahedron Boundary Jacobian Matrix
+    \item[$\matr{D} \in \mathbb{R}^{n_{dof} \times (n_{con}}$] Full Jacobian Matrix
+    \item[$\vect{\widehat{\gamma}}^{*}\in \mathbb{R}^{3n_{con} \times 1}$] Reaction Forces
+    \item[$\vect{\gamma}^{*}\in \mathbb{R}^{3n_{con} \times 1}$]  Reaction Impulses
+    \item[$\vect{\gamma}^{c}\in \mathbb{R}^{3n_{c} \times 1}$] Contact Reaction Impulses
+    \item[$\vect{\gamma}^{j}\in \mathbb{R}^{n_{j} \times 1}$] Joint Reaction Impulses
+    \item[$\vect{\gamma}^{f}\in \mathbb{R}^{n_{f} \times 1}$] Density Reaction Impulses
+    \item[$\vect{\gamma}^{fb}\in \mathbb{R}^{3n_{fb} \times 1}$] Fluid Boundary Reaction Impulses
+    \item[$\vect{\gamma}^{t}\in \mathbb{R}^{6n_{t} \times 1}$] Tetrahedron Strain Reaction Impulses
+    \item[$\vect{\gamma}^{tv}\in \mathbb{R}^{n_{t} \times 1}$] Tetrahedron Volume Reaction Impulses
+    \item[$\vect{\gamma}^{tb}\in \mathbb{R}^{3n_{tb} \times 1}$] Tetrahedron Boundary Reaction Impulses
+\end{compactdesc}
+%\end{multicols}
+
+\section*{Variables}
+\begin{multicols}{2}
+\begin{compactdesc}
+    \item[$\Phi$] Constraint Potential Energy
+    \item[$\Psi$] Energy Density Function
+    \item[$C$] Constraint Function
+    \item[$\matr{F}$] Deformation Gradient
+    \item[$\gamma$] Lagrange Multiplier
+    \item[$V_0$] Initial Volume
+    \item[$J$] Determinant of Deformation Gradient
+    
+    \item[$\vect{q} \in \mathbb{R}^{n_{dof} \times 1}$] Positions
+    \item[$\vect{v} \in \mathbb{R}^{n_{dof} \times 1}$] Velocities
+    \item[$\vect{\nu}\in \mathbb{R}^{(3n_{c} +n_b) \times 1}$] Reaction Impulses
+    \item[$\matr{N}\in \mathbb{R}^{(3n_{c} +n_b) \times (3n_{c} +n_b)}$] Schur Matrix
+    \item[$\matr{r}\in \mathbb{R}^{(3n_{c} +n_b) \times 1}$] Schur RHS
+    \item[$\vect{f}\in \mathbb{R}^{n_{dof} \times 1}$] External Forces
+    \item[$\Theta$] Gap Function
+    \item[$\Upsilon$] Friction Cone
+    \item[$\Upsilon^{\circ}$] Polar Friction Cone
+\end{compactdesc}
+\end{multicols}
+

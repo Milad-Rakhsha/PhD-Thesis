@@ -1,0 +1,52 @@
+\tikzsetnextfilename{waterFront}
+\tikzset{external/export next=false}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=0.6\columnwidth,
+			%height=0.6\textwidth,
+			xlabel = $t(gH)^{-1/2}$,
+			ylabel = $x_{front}/H$,
+			xmin=0, xmax=3.2,
+			ymin=0, ymax=6,
+			xtick={0,0.5,...,3},
+			ytick={0,1,...,6},
+			minor y tick num={1},
+			minor x tick num={1},
+			y tick label style={
+				/pgf/number format/fixed,
+				/pgf/number format/fixed zerofill,
+				/pgf/number format/precision=1},
+			axis x line=middle,
+			axis y line=middle,			
+			grid=both,
+			grid style={dotted},
+			%legend cell align = left,
+			x tick label style={/pgf/number format/fixed},
+			%no marks,
+			]
+			\addplot[black,very thick,,only marks, mark=o]
+			table[
+			x index={0},
+			y index={1}, 
+			]{images/Figs/Front_Pos_damBreak.txt};
+			
+			\addplot[black,very thick]
+			table[
+			x expr=\thisrowno{0},
+			y expr=\thisrowno{1}+2.75, %This is the offset of the corner of the dam
+			]{images/Analysis_DamBreak.txt};
+			\legend{\small Martin and Moyce \cite{Martin1952},  \small Present Study}
+			
+			
+\texttt{}%			\addplot[black,very thick,dashed,domain=0:4, samples=20]
+%			{1.8*(x-0.45)};
+%			\legend{\small Martin and Moyce \cite{Martin1952},  \small Present Study}
+%					
+		\end{axis}
+	\end{tikzpicture}
+%	\caption{Lift coefficient}
+		\caption{Comparison of water-front propagation between IISPH  and experimental results of Martin and Moyce \cite{Martin1952,Shao2003}.}
+			\label{fig:waterFront}
+\end{figure}

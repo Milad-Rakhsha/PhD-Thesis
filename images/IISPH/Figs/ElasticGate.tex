@@ -1,0 +1,105 @@
+%\tikzsetnextfilename{FSI_Validation}
+%\tikzset{external/export next=false}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			name=plot1,
+			width=0.65\columnwidth,
+			height=0.32\columnwidth,
+			xlabel = $t(s)$,
+			ylabel = $x(m)$,
+			xmin=0, xmax=0.40,
+			ymin=0, ymax=0.06,
+			xtick={0,0.05,...,0.4},
+			ytick={0,0.005,...,0.06},
+			minor y tick num={1},
+			minor x tick num={1},
+			y tick label style={
+	/pgf/number format/fixed,
+	/pgf/number format/fixed zerofill,
+	/pgf/number format/precision=1},
+axis x line=middle,
+axis y line=middle,			
+grid=both,
+grid style={dotted},
+legend cell align={left},
+legend style={at={(0.75,1.0)},anchor=center},
+%legend cell align = left,
+x tick label style={/pgf/number format/fixed},
+			]
+
+			\addplot[black,very thick]
+			table[
+			x expr=\thisrowno{0},
+			y expr=\thisrowno{1}+0.190,
+			]{images/IISPH/Analysis_FSI.txt};
+			
+			\addplot[black,very thick,dashed]
+			table[
+			x expr=\thisrowno{0},
+			y expr=\thisrowno{1},
+			]{images/IISPH/Figs/Antoci_x.txt};
+			
+			\addplot[black,very thick,,only marks, mark=o]
+			table[
+			x expr=\thisrowno{0},
+			y expr=\thisrowno{1},
+			]{images/IISPH/Figs/Ex10X.txt};
+			
+		\legend{Present Study, Antoci et al. \cite{Antoci2007}, Experimental Results \cite{Antoci2007}}
+		\end{axis}
+		
+		
+		\begin{axis}[
+		name=plot2,
+		width=0.65\columnwidth,
+		height=0.32\columnwidth,
+		at=(plot1.below south), 
+		anchor=above north,
+		ylabel = $y(m)$,
+		xlabel = $t(s)$,
+		xmin=0, xmax=0.4,
+		ymin=0, ymax=0.02,
+		xtick={0,0.05,...,0.5},
+		ytick={0,0.002,...,0.02},
+		minor y tick num={1},
+		minor x tick num={1},
+		y tick label style={
+			/pgf/number format/fixed,
+			/pgf/number format/fixed zerofill,
+			/pgf/number format/precision=1},
+		axis x line=middle,
+		axis y line=middle,			
+		grid=both,
+		grid style={dotted},
+		%legend cell align = left,
+		x tick label style={/pgf/number format/fixed},
+		%no marks,
+		]
+	
+		\addplot[black,very thick]
+		table[
+		x expr=\thisrowno{0},
+		y expr=\thisrowno{3}-0.005,
+		]{images/IISPH/Analysis_FSI.txt};
+		
+		\addplot[black,very thick,,dashed]
+		table[
+		x expr=\thisrowno{0},
+		y expr=\thisrowno{1},
+		]{images/IISPH/Figs/Antoci_y.txt};
+		
+		\addplot[black,very thick,,only marks, mark=o]
+		table[
+		x expr=\thisrowno{0},
+		y expr=\thisrowno{1},
+		]{images/IISPH/Figs/Ex10Y.txt};
+		
+		\end{axis}
+		
+	\end{tikzpicture}
+\caption{Comparison of the horizontal position of the tip of the elastic gate from the numerical results of the present study, and the numerical/experimental results of the study of Antoci et al. \cite{Antoci2007}.}
+\label{fig:Elastic_Gate}
+			\label{fig:FSI_Validation}
+\end{figure}
